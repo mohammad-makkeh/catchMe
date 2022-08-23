@@ -63,7 +63,7 @@ let breaks = false;
 let fire = false; //for the riffleGun
 let alreadyHarder = false;
 let fireRate = 4;
-let difficulty = 15;
+let difficulty = 21;
 let waveRate = 1000;
 let interval;
 let friction = 0.85;
@@ -643,7 +643,7 @@ function init(){
 	score = 0;
 	sc.innerHTML = score;
 	weaponIndex = 0;
-	difficulty = 7;
+	difficulty = 21;
 	waveRate = 10000;
 	bullets = [];
 	enemies = [];
