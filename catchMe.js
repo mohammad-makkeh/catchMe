@@ -271,16 +271,19 @@ window.addEventListener("click",(event)=>{
 						score += Math.floor(enemy.r * 10);
 						sc.innerHTML = `${score}`;
 
-						//enemy explodes into bullets:
-						for( let i = 0 ; i < Math.floor(enemy.r * 0.5) ; i++ ){
-							
-							let v = {
-								x :   (Math.random() - 0.5) * (Math.random() * 20 + 16),
-								y :   (Math.random() - 0.5) * (Math.random() * 20 + 16)
+						if(Math.random() < 0.5){
+							//enemy explodes into bullets:
+							for( let i = 0 ; i < Math.floor(enemy.r * 0.5) ; i++ ){
+
+								let v = {
+									x :   (Math.random() - 0.5) * (Math.random() * 20 + 16),
+									y :   (Math.random() - 0.5) * (Math.random() * 20 + 16)
+								}
+								let decay = 0.8;
+								bullets.push(new Bullet(enemy.x, enemy.y, 3, "#fff", v, false, decay));
 							}
-							let decay = 0.965;
-							bullets.push(new Bullet(enemy.x, enemy.y, 5, "#fff", v, false, decay));
 						}
+						
 					}
 				
 				}
@@ -308,15 +311,17 @@ window.addEventListener("click",(event)=>{
 					score += Math.floor(enemy.r * 10);
 					sc.innerHTML = `${score}`;
 
-					//enemy explodes into bullets:
-					for( let i = 0 ; i < Math.floor(enemy.r * 0.4) ; i++ ){
-						
-						let v = {
-							x :   (Math.random() - 0.5) * (Math.random() * 20 + 16),
-							y :   (Math.random() - 0.5) * (Math.random() * 20 + 16)
+					if(Math.random() < 0.2){
+						//enemy explodes into bullets:
+						for( let i = 0 ; i < Math.floor(enemy.r * 0.5) ; i++ ){
+
+							let v = {
+								x :   (Math.random() - 0.5) * (Math.random() * 20 + 16),
+								y :   (Math.random() - 0.5) * (Math.random() * 20 + 16)
+							}
+							let decay = 0.7;
+							bullets.push(new Bullet(enemy.x, enemy.y, 3, "#fff", v, false, decay));
 						}
-						let decay = 0.965;
-						bullets.push(new Bullet(enemy.x, enemy.y, 5, "#fff", v, false, decay));
 					}
 				}
 			})
